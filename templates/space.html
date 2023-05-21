@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Title text
+{% endblock %}
+
+
+{% block task %}
+Вывести количество космонавтов в настоящий момент <br>
+(API источник http://api.open-notify.org/astros.json )<br>
+(используйте библиотеку https://pypi.org/project/requests/ )<br>
+PATH: /space/
+{% endblock %}
+
+{% block container %}
+<form action="/space/" method="POST">
+    <div class="form-group">
+        <button type="submit" name="space" class="btn btn-primary">How much people?</button>
+    </div>
+</form>
+<br>
+<p>{{ content }}</p>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Title text
+{% endblock %}
+
+
+{% block task %}
+Вывести 100 случайно сгенерированных юзеров (почта + имя)<br>
+Например - 'Dmytro aasdasda@mail.com'<br>
+( можете использовать - https://pypi.org/project/Faker/ )<br>
+PATH: /generate-users/ + GET параметр который регулирует количество юзеров (/generate-users/?count=100)
+{% endblock %}
+{% block container %}
+<form action="/generate-users/" method="GET">
+    <div class="form-group">
+        <input type="text" name="count" id="inlineFormInput" placeholder="Number of created users">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>
+
+{% for line in content %}
+<p>{{ line }}</p>
+{% endfor %}
+<!--<p>{{ content }}</p>-->
+{% endblock %}
