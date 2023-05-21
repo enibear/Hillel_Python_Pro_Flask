@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+requirements
+{% endblock %}
+
+
+{% block task %}
+Возвращать содержимое файла с python пакетами (requirements.txt):
+PATH: /requirements/ - открыть файл requirements.txt и вернуть его содержимое
+{% endblock %}
+
+{% block container %}
+<form action="/requirements/" method="POST" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="exampleFormControlFile1">Example file input</label>
+        <input type="file" name="file" class="form-control-file" id="exampleFormControlFile1">
+        <button type="submit" class="btn btn-primary mb-2">Open File</button>
+    </div>
+</form>
+
+{% for line in file_content %}
+<p>{{ line }}</p>
+{% endfor %}
+
+{% endblock %}

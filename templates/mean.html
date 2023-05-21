@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Title text
+{% endblock %}
+
+
+{% block task %}
+Вывести средний рост, средний вес (см, кг) (из приикрепленного файла hw.csv) <br>
+PATH: /mean/ <br>
+ОБРАТИТЕ ВНИМАНИЕ НА ЕДЕНИЦЫ ИЗМЕРЕНИЯ
+{% endblock %}
+
+{% block container %}
+<form action="/mean/" method="POST">
+    <div class="form-group">
+        <button type="submit" name="mean" class="btn btn-primary">Read the File</button>
+    </div>
+</form>
+<br>
+<p>{{ content }}</p>
+{% endblock %}
